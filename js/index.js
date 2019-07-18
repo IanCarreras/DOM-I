@@ -42,12 +42,18 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let nav_items = document.querySelectorAll('a')
-nav_items[0].textContent = siteContent['nav']['nav-item-1']
-nav_items[1].textContent = siteContent['nav']['nav-item-2']
-nav_items[2].textContent = siteContent['nav']['nav-item-3']
-nav_items[3].textContent = siteContent['nav']['nav-item-4']
-nav_items[4].textContent = siteContent['nav']['nav-item-5']
-nav_items[5].textContent = siteContent['nav']['nav-item-6']
+nav_items.forEach((item, index) => {
+  item.textContent = siteContent['nav']['nav-item-'+(index+1)]
+  item.style.color = 'green'
+})
+
+let nav = document.querySelector('nav')
+let prepended_a_tag = document.createElement('a')
+let appended_a_tag = document.createElement('a')
+prepended_a_tag.textContent = 'prepended'
+appended_a_tag.textContent = 'appended'
+nav.prepend(prepended_a_tag)
+nav.appendChild(appended_a_tag)
 
 let h1 = document.getElementsByTagName('h1')
 h1[0].textContent = siteContent['cta']['h1']
