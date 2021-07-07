@@ -40,3 +40,48 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let nav_items = document.querySelectorAll('a')
+nav_items.forEach((item, index) => {
+  item.textContent = siteContent['nav']['nav-item-'+(index+1)]
+  item.style.color = 'green'
+})
+
+let nav = document.querySelector('nav')
+let prepended_a_tag = document.createElement('a')
+let appended_a_tag = document.createElement('a')
+prepended_a_tag.textContent = 'prepended'
+appended_a_tag.textContent = 'appended'
+nav.prepend(prepended_a_tag)
+nav.appendChild(appended_a_tag)
+
+let h1 = document.getElementsByTagName('h1')
+h1[0].textContent = siteContent['cta']['h1']
+
+let button = document.querySelector('button')
+button.textContent = siteContent['cta']['button']
+
+let cta_img = document.getElementById('cta-img')
+cta_img.setAttribute('src', siteContent['cta']['img-src'])
+
+let middle_img = document.getElementById('middle-img')
+middle_img.setAttribute('src', siteContent['main-content']['middle-img-src'])
+
+let h4Tags = document.querySelectorAll('h4')
+h4Tags[0].textContent = siteContent['main-content']['features-h4']
+h4Tags[1].textContent = siteContent['main-content']['about-h4']
+h4Tags[2].textContent = siteContent['main-content']['services-h4']
+h4Tags[3].textContent = siteContent['main-content']['product-h4']
+h4Tags[4].textContent = siteContent['main-content']['vision-h4']
+h4Tags[5].textContent = siteContent['contact']['contact-h4']
+
+let pTags = document.querySelectorAll('p')
+pTags[0].textContent = siteContent['main-content']['features-content']
+pTags[1].textContent = siteContent['main-content']['about-content']
+pTags[2].textContent = siteContent['main-content']['services-content']
+pTags[3].textContent = siteContent['main-content']['product-content']
+pTags[4].textContent = siteContent['main-content']['vision-content']
+pTags[5].textContent = siteContent['contact']['address']
+pTags[6].textContent = siteContent['contact']['phone']
+pTags[7].textContent = siteContent['contact']['email']
+pTags[8].textContent = siteContent['footer']['copyright']
